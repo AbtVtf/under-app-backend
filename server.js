@@ -25,8 +25,9 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("receive_message", data.message);
   });
 });
-
-server.listen(port, () => console.log(`server running on port: ${port}`));
+server.listen(process.env.PORT || 3000, () => {
+   console.log("listening on *:3000");
+});
 // var clients = {};
 
 // io.on("connection", function(client) {
