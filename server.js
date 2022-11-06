@@ -8,6 +8,10 @@ const cors = require("cors");
 const port = 3000;
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("ok");
+});
+
 io.on("connection", (socket) => {
   console.log("a user connected", socket.id);
 
